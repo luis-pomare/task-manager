@@ -13,15 +13,32 @@ function TaskManager() {
     event.preventDefault();
     setTaskList((prevState) => [
       ...prevState,
-      { text: [newTask], id: [Date.now()] },
+      { text: newTask, id: Date.now() },
     ]);
     setNewTask('');
+  }
+
+  function deleteHandler(elementId) {
+    setTaskList((prevState) =>
+      prevState.filter((task) => task.id !== elementId),
+    );
   }
 
   return (
     <>
       <ol>
-        <li>{taskList.length ? taskList[0].id : ''}</li>
+        {taskList.map((element) => (
+          <li key={element.id}>
+            {element.text}
+            <button
+              onClick={() => {
+                deleteHandler(element.id);
+              }}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
       </ol>
       <form onSubmit={onSubmitHandler}>
         <input
