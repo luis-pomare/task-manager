@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TaskItem from './TaskItem';
 
 function TaskManager() {
   const [taskList, setTaskList] = useState([]);
@@ -27,17 +28,12 @@ function TaskManager() {
   return (
     <>
       <ol>
-        {taskList.map((element) => (
-          <li key={element.id}>
-            {element.text}
-            <button
-              onClick={() => {
-                deleteHandler(element.id);
-              }}
-            >
-              Delete
-            </button>
-          </li>
+        {taskList.map((currentTask) => (
+          <TaskItem
+            key={currentTask.id}
+            currentTask={currentTask}
+            deleteHandler={deleteHandler}
+          />
         ))}
       </ol>
       <form onSubmit={onSubmitHandler}>
