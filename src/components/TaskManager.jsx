@@ -1,23 +1,9 @@
 import { useState } from 'react';
 import TaskItem from './TaskItem';
+import TaskForm from './TaskForm';
 
 function TaskManager() {
   const [taskList, setTaskList] = useState([]);
-
-  const [newTask, setNewTask] = useState('');
-
-  function onChangeHandler(event) {
-    setNewTask(event.target.value);
-  }
-
-  function onSubmitHandler(event) {
-    event.preventDefault();
-    setTaskList((prevState) => [
-      ...prevState,
-      { text: newTask, id: Date.now() },
-    ]);
-    setNewTask('');
-  }
 
   function deleteHandler(elementId) {
     setTaskList((prevState) =>
@@ -36,19 +22,7 @@ function TaskManager() {
           />
         ))}
       </ol>
-      <form onSubmit={onSubmitHandler}>
-        <input
-          type='text'
-          value={newTask}
-          placeholder='Enter the new task'
-          onChange={onChangeHandler}
-          name='newTask'
-        />
-
-        <button type='submit' disabled={!newTask}>
-          Add
-        </button>
-      </form>
+      <TaskForm setTaskList={setTaskList} />
     </>
   );
 }
