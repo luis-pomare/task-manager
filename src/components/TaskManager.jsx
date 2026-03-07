@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TaskItem from './TaskItem';
 import TaskForm from './TaskForm';
+import TaskList from './TaskList';
 
 function TaskManager() {
   const [taskList, setTaskList] = useState([]);
@@ -13,15 +13,7 @@ function TaskManager() {
 
   return (
     <>
-      <ol>
-        {taskList.map((currentTask) => (
-          <TaskItem
-            key={currentTask.id}
-            currentTask={currentTask}
-            deleteHandler={deleteHandler}
-          />
-        ))}
-      </ol>
+      <TaskList taskList={taskList} deleteHandler={deleteHandler} />
       <TaskForm setTaskList={setTaskList} />
     </>
   );
