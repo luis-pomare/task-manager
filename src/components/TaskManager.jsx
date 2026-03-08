@@ -11,10 +11,20 @@ function TaskManager() {
     );
   }
 
+  function addTask(newTask) {
+    setTaskList((prevState) => [
+      ...prevState,
+      {
+        text: newTask,
+        id: Date.now(),
+      },
+    ]);
+  }
+
   return (
     <>
       <TaskList taskList={taskList} deleteHandler={deleteHandler} />
-      <TaskForm setTaskList={setTaskList} />
+      <TaskForm addTask={addTask} />
     </>
   );
 }

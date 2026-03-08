@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function TaskForm({ onSubmitHandler, setTaskList }) {
+function TaskForm({ addTask }) {
   const [newTask, setNewTask] = useState('');
 
   function onChangeHandler(event) {
@@ -9,10 +9,7 @@ function TaskForm({ onSubmitHandler, setTaskList }) {
 
   function onSubmitHandler(event) {
     event.preventDefault();
-    setTaskList((prevState) => [
-      ...prevState,
-      { text: newTask, id: Date.now() },
-    ]);
+    addTask(newTask);
     setNewTask('');
   }
 
