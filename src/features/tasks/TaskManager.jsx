@@ -11,7 +11,11 @@ function TaskManager() {
     ]);
   }
 
-  return <TaskForm addTask={addTask} />;
+  return (
+    <>
+      <TaskForm addTask={addTask} />
+    </>
+  );
 }
 
 export default TaskManager;

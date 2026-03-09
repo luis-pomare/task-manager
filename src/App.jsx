@@ -1,4 +1,4 @@
-import './App.css';
+import './styling/App.css';
 import TaskManager from './features/tasks/TaskManager.jsx';
 
 function App() {
