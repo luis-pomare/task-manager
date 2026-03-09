@@ -1,9 +1,10 @@
 import './App.css';
+import TaskManager from './features/tasks/TaskManager.jsx';
 
 function App() {
   return (
     <>
-      <h1>TaskManager</h1>
+      <TaskManager />
     </>
   );
 }
