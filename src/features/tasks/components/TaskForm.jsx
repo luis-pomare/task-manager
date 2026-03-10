@@ -6,6 +6,7 @@ function TaskForm({ addTask }) {
   function submitHandler(event) {
     event.preventDefault();
     addTask(newTask);
+    setNewTask('');
   }
 
   return (
