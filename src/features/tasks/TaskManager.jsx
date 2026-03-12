@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import TaskForm from './components/TaskForm';
+import TaskList from './components/TaskList';
 
 function TaskManager() {
   const [taskList, setTaskList] = useState([]);
@@ -13,6 +14,7 @@ function TaskManager() {
 
   return (
     <>
+      <TaskList taskList={taskList} />
       <TaskForm addTask={addTask} />
     </>
   );

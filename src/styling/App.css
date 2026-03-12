@@ -48,6 +48,7 @@ html {
   background-color: inherit;
   font-weight: 900;
   border: 1px solid #fff;
+  cursor: pointer;
 }
 
 #submit:disabled {
