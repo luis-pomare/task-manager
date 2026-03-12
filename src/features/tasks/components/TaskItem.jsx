@@ -3,7 +3,7 @@ function TaskItem({ task, deleteTask }) {
     <>
       <li>
         {task.text}
-        <button onClick={deleteTask}>Delete</button>
+        <button onClick={() => deleteTask(task.id)}>Delete</button>
       </li>
     </>
   );

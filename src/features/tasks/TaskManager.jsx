@@ -12,9 +12,13 @@ function TaskManager() {
     ]);
   }
 
+  function deleteTask(id) {
+    setTaskList(taskList.filter((task) => task.id != id));
+  }
+
   return (
     <>
-      <TaskList taskList={taskList} />
+      <TaskList taskList={taskList} deleteTask={deleteTask} />
       <TaskForm addTask={addTask} />
     </>
   );
