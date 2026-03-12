@@ -1,8 +1,10 @@
+import TaskItem from './TaskItem';
+
 function TaskList({ taskList }) {
   return (
     <ol id='list-container'>
       {taskList.map((task) => (
-        <li key={task.id}>{task.text}</li>
+        <TaskItem key={task.id} task={task} />
       ))}
     </ol>
   );
