@@ -13,7 +13,7 @@ function TaskManager() {
   }
 
   function deleteTask(id) {
-    setTaskList(taskList.filter((task) => task.id != id));
+    setTaskList(taskList.filter((task) => task.id !== id));
   }
 
   function toggleCompleted(id) {
