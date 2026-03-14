@@ -90,3 +90,6 @@ button {
   background-color: #0056b3;
 }
 
+.completed {
+  text-decoration: line-through;
+}
